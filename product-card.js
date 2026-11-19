@@ -1,12 +1,12 @@
 /* =====================================================================
-   DoorHouse — HTML-КОМПОНЕНТ  <product-card>
+   PalitraDoors — HTML-КОМПОНЕНТ  <product-card>
    Карточка товара, которую можно вставить одной строкой в любую страницу.
 
    ПРИМЕР:
    <product-card
      category="interior"
-     image="img/products/classic-oak.jpg"
-     model="Дверь «Classic Oak»"
+     image="img/products/classic.jpg"
+     model="Дверь «Classic»"
      price="1850">
    </product-card>
 
