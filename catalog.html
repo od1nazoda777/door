@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Каталог — DoorHouse</title>
+  <meta name="description" content="Каталог DoorHouse: межкомнатные и входные двери, дверные ручки, замки и петли. Актуальные цены и фото.">
+
+  <!-- Шрифты -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Общие стили сайта -->
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+  <!-- =====================================================
+       ШАПКА САЙТА
+       ===================================================== -->
+  <header class="header">
+    <div class="container header__inner">
+
+      <a href="index.html" class="logo" aria-label="DoorHouse — на главную">
+        <span class="logo__icon"></span>
+        <span class="logo__text">Door<span>House</span></span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Главное меню">
+        <ul class="nav__list">
+          <!-- Текущая страница -->
+          <li><a class="nav__link is-current" href="./catalog.html" aria-current="page">Каталог</a></li>
+          <li><a class="nav__link" href="./about.html">О нас</a></li>
+          <li><a class="nav__link" href="./measure.html">Услуги замера</a></li>
+          <li><a class="nav__link" href="./contact.html">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <a href="contacts.html#callback" class="btn btn--primary btn--sm header__cta">Заказать звонок</a>
+
+      <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- =====================================================
+         ЗАГОЛОВОК СТРАНИЦЫ
+         ===================================================== -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="breadcrumbs">
+          <a href="index.html">Главная</a><span>/</span>Каталог
+        </div>
+        <h1 class="page-hero__title">Каталог товаров</h1>
+        <p class="page-hero__text">Двери, ручки, замки и петли. Выберите категорию или воспользуйтесь поиском.</p>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         КАТАЛОГ
+         ===================================================== -->
+    <section class="catalog-page">
+      <div class="container">
+
+        <!-- Фильтры категорий (data-filter должен совпадать с category у товара) -->
+        <div class="filters" id="filters" role="tablist" aria-label="Категории товаров">
+          <button class="filter-btn is-active" data-filter="all" role="tab" aria-selected="true">Все товары</button>
+          <button class="filter-btn" data-filter="interior" role="tab" aria-selected="false">Межкомнатные двери</button>
+          <button class="filter-btn" data-filter="entrance" role="tab" aria-selected="false">Входные двери</button>
+          <button class="filter-btn" data-filter="handles"  role="tab" aria-selected="false">Дверные ручки</button>
+          <button class="filter-btn" data-filter="locks"    role="tab" aria-selected="false">Замки и петли</button>
+        </div>
+
+        <!-- Поиск и сортировка -->
+        <div class="toolbar">
+          <div class="catalog-count" id="catalog-count" style="margin:0;"></div>
+          <div class="toolbar__controls">
+            <input class="form-control" type="search" id="search" placeholder="Поиск по названию…" aria-label="Поиск по названию">
+            <select class="form-control" id="sort" aria-label="Сортировка">
+              <option value="default">По умолчанию</option>
+              <option value="price-asc">Сначала дешёвые</option>
+              <option value="price-desc">Сначала дорогие</option>
+              <option value="name">По названию</option>
+            </select>
+          </div>
+        </div>
+
+
+        <!-- =================================================
+             ТОВАРЫ
+             ─────────────────────────────────────────────────
+             КАК ДОБАВИТЬ НОВЫЙ ТОВАР:
+               1. Положите фото в папку  img/products/
+               2. Скопируйте любую строку <product-card ...> ниже,
+                  вставьте под ней и замените фото, модель и цену.
+
+             КАК ИЗМЕНИТЬ ТОВАР:
+               Просто поменяйте значения в его строке (цену, фото, модель).
+
+             КАК УДАЛИТЬ ТОВАР:
+               Удалите его строку целиком.
+
+             ГОТОВЫЙ ШАБЛОН (скопируйте и вставьте):
+
+             <product-card
+               category="interior"
+               image="img/products/название-фото.jpg"
+               model="Название модели"
+               price="1500">
+             </product-card>
+
+             category: interior (межкомнатные) | entrance (входные)
+                       | handles (ручки) | locks (замки и петли)
+             Необязательно: old-price="2000"  badge="Хит"
+                            description="Короткое описание"
+             Полный список атрибутов — в начале файла product-card.js
+             ================================================= -->
+        <div class="product-grid" id="product-grid">
+
+          
+          <product-card
+            category="locks"
+            image="./img/products/entrance4.jpg"
+            model="Петли скрытые «Hidden Pro»"
+            price="260"
+            old-price="300"
+            badge="Новинка"
+            description="Регулировка в 3 плоскостях, нагрузка до 60 кг.">
+          </product-card>
+
+        </div>
+
+        <!-- Сообщение, если ничего не найдено -->
+        <div class="catalog-empty" id="catalog-empty">
+          Ничего не найдено. Попробуйте другую категорию или запрос.
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =====================================================
+       ПОДВАЛ
+       ===================================================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© 2026 DoorHouse. Все права защищены.</span>
+      <span>Двери · Ручки · Фурнитура</span>
+    </div>
+  </footer>
+
+  <!-- Компонент <product-card> -->
+  <script src="./product-card.js"></script>
+
+  <!-- =====================================================
+       СКРИПТ КАТАЛОГА: фильтры, поиск, сортировка
+       (работает с любыми <product-card> на странице,
+        менять его при добавлении товаров не нужно)
+       ===================================================== -->
+  <script>
+    // --- Мобильное меню ---
+    const burger = document.getElementById('burger');
+    const nav = document.getElementById('nav');
+    burger.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('is-open');
+      burger.classList.toggle('is-open', isOpen);
+      burger.setAttribute('aria-expanded', isOpen);
+    });
+
+    // --- Элементы страницы ---
+    const gridEl   = document.getElementById('product-grid');
+    const countEl  = document.getElementById('catalog-count');
+    const emptyEl  = document.getElementById('catalog-empty');
+    const searchEl = document.getElementById('search');
+    const sortEl   = document.getElementById('sort');
+    const filterButtons = Array.from(document.querySelectorAll('.filter-btn'));
+    const cards = Array.from(gridEl.querySelectorAll('product-card'));
+
+    // Запоминаем исходный порядок для сортировки «По умолчанию»
+    cards.forEach((card, i) => { card.dataset.order = i; });
+
+    // Категория берётся из адреса (?cat=handles), если она существует
+    const urlCat = new URLSearchParams(window.location.search).get('cat');
+    let currentCategory = filterButtons.some(b => b.dataset.filter === urlCat) ? urlCat : 'all';
+
+    // --- Обновление списка: фильтр + поиск + сортировка ---
+    function update() {
+      const query = searchEl.value.trim().toLowerCase();
+      let visible = 0;
+
+      cards.forEach(card => {
+        const inCategory = currentCategory === 'all' || card.getAttribute('category') === currentCategory;
+        const model = (card.getAttribute('model') || '').toLowerCase();
+        const show = inCategory && (!query || model.includes(query));
+        card.hidden = !show;
+        if (show) visible++;
+      });
+
+      // Сортировка: переставляем карточки в сетке
+      const price = (c) => Number(c.getAttribute('price')) || 0;
+      const sorters = {
+        'default':    (a, b) => a.dataset.order - b.dataset.order,
+        'price-asc':  (a, b) => price(a) - price(b),
+        'price-desc': (a, b) => price(b) - price(a),
+        'name':       (a, b) => (a.getAttribute('model') || '').localeCompare(b.getAttribute('model') || '', 'ru')
+      };
+      cards.slice().sort(sorters[sortEl.value]).forEach(card => gridEl.appendChild(card));
+
+      countEl.textContent = 'Найдено товаров: ' + visible;
+      emptyEl.classList.toggle('is-visible', visible === 0);
+    }
+
+    // --- Кнопки-фильтры ---
+    function setActiveFilter() {
+      filterButtons.forEach(btn => {
+        const active = btn.dataset.filter === currentCategory;
+        btn.classList.toggle('is-active', active);
+        btn.setAttribute('aria-selected', active);
+      });
+    }
+    filterButtons.forEach(btn => btn.addEventListener('click', () => {
+      currentCategory = btn.dataset.filter;
+      setActiveFilter();
+      update();
+    }));
+
+    searchEl.addEventListener('input', update);
+    sortEl.addEventListener('change', update);
+
+    // Первый запуск
+    setActiveFilter();
+    update();
+  </script>
+</body>
+</html>

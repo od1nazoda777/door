@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Услуги замера — DoorHouse</title>
+  <meta name="description" content="Бесплатный замер дверных проёмов от DoorHouse: выезд мастера, точные размеры, консультация по выбору двери и фурнитуры.">
+
+  <!-- Шрифты -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Общие стили сайта (файл должен лежать рядом с этим HTML) -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- =====================================================
+       ШАПКА САЙТА (такая же, как на других страницах)
+       ===================================================== -->
+  <header class="header">
+    <div class="container header__inner">
+
+      <a href="index.html" class="logo" aria-label="DoorHouse — на главную">
+        <span class="logo__icon"></span>
+        <span class="logo__text">Door<span>House</span></span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Главное меню">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="catalog.html">Каталог</a></li>
+          <li><a class="nav__link" href="about.html">О нас</a></li>
+          <!-- Текущая страница -->
+          <li><a class="nav__link is-current" href="measure.html" aria-current="page">Услуги замера</a></li>
+          <li><a class="nav__link" href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <a href="#booking" class="btn btn--primary btn--sm header__cta">Заказать звонок</a>
+
+      <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- =====================================================
+         ЗАГОЛОВОК СТРАНИЦЫ
+         ===================================================== -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="breadcrumbs">
+          <a href="index.html">Главная</a><span>/</span>Услуги замера
+        </div>
+        <h1 class="page-hero__title">Бесплатный замер дверных проёмов</h1>
+        <p class="page-hero__text">
+          Мастер приедет в удобное время, снимет точные размеры и поможет выбрать дверь и фурнитуру под ваш интерьер.
+        </p>
+        <div style="margin-top: 28px;">
+          <a href="#booking" class="btn btn--primary">Записаться на замер</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         ПРЕИМУЩЕСТВА (цифры заменить на реальные)
+         ===================================================== -->
+    <section class="measure-benefits">
+      <div class="container">
+        <div class="benefits">
+          <div class="benefit">
+            <div class="benefit__num">0 смн</div>
+            <div class="benefit__title">Бесплатный выезд</div>
+            <p class="benefit__text">Замер не требует предоплаты и не обязывает к покупке.</p>
+          </div>
+          <div class="benefit">
+            <div class="benefit__num">24 ч</div>
+            <div class="benefit__title">Быстрый приезд</div>
+            <p class="benefit__text">Выезжаем в течение суток после заявки или в удобный для вас день.</p>
+          </div>
+          <div class="benefit">
+            <div class="benefit__num">±1 мм</div>
+            <div class="benefit__title">Точные размеры</div>
+            <p class="benefit__text">Профессиональный инструмент и учёт неровностей стен и пола.</p>
+          </div>
+          <div class="benefit">
+            <div class="benefit__num">30 мин</div>
+            <div class="benefit__title">Консультация на месте</div>
+            <p class="benefit__text">Подскажем по стилю, материалам, замкам и петлям.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         ЭТАПЫ РАБОТЫ
+         ===================================================== -->
+    <section class="steps-section">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-head__title">Как проходит замер</h2>
+          <p class="section-head__text">Четыре простых шага от заявки до готовой двери.</p>
+        </div>
+
+        <!-- Номера шагов добавляются автоматически через CSS counter -->
+        <div class="steps">
+          <div class="step">
+            <h3 class="step__title">Заявка</h3>
+            <p class="step__text">Оставьте телефон и адрес — менеджер уточнит детали и согласует время визита.</p>
+          </div>
+          <div class="step">
+            <h3 class="step__title">Выезд мастера</h3>
+            <p class="step__text">Специалист приезжает с образцами и инструментом в назначенное время.</p>
+          </div>
+          <div class="step">
+            <h3 class="step__title">Замер и советы</h3>
+            <p class="step__text">Снимает размеры проёма, оценивает стены и подсказывает подходящие модели.</p>
+          </div>
+          <div class="step">
+            <h3 class="step__title">Расчёт и заказ</h3>
+            <p class="step__text">Вы получаете смету, выбираете дверь и фурнитуру, мы оформляем заказ и установку.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         ЗАПИСЬ НА ЗАМЕР: ЧТО ВХОДИТ + ФОРМА
+         ===================================================== -->
+    <section class="booking" id="booking">
+      <div class="container booking__grid">
+
+        <!-- Левая колонка: что входит в услугу -->
+        <div class="included">
+          <h2 class="included__title">Что входит в замер</h2>
+          <ul class="included__list">
+            <li>Выезд специалиста в удобное время</li>
+            <li>Измерение ширины, высоты и толщины стены проёма</li>
+            <li>Проверка геометрии: перекосов, уровня пола и стен</li>
+            <li>Подбор двери, ручек, замков и петель под интерьер</li>
+            <li>Предварительный расчёт стоимости с установкой</li>
+          </ul>
+          <div class="included__price">
+            <strong>Стоимость замера: бесплатно</strong><br>
+            Условия выезда за город и срок действия акции уточняйте у менеджера.
+          </div>
+        </div>
+
+        <!-- Правая колонка: форма записи -->
+        <form class="contact-form" id="measure-form" novalidate>
+          <h2 class="contact-form__title">Записаться на замер</h2>
+          <p class="contact-form__text">Заполните форму — мы перезвоним и подтвердим время визита.</p>
+
+          <div class="form-group">
+            <label for="name">Ваше имя</label>
+            <input class="form-control" type="text" id="name" name="name" placeholder="Например, Али" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Телефон</label>
+            <input class="form-control" type="tel" id="phone" name="phone" placeholder="+992 __ ___ __ __" required>
+          </div>
+
+          <div class="form-group">
+            <label for="address">Адрес объекта</label>
+            <input class="form-control" type="text" id="address" name="address" placeholder="Город, улица, дом, квартира">
+          </div>
+
+          <div class="form-group">
+            <label for="date">Желаемая дата</label>
+            <input class="form-control" type="date" id="date" name="date">
+          </div>
+
+          <div class="form-group">
+            <label for="doors">Что будем измерять?</label>
+            <select class="form-control" id="doors" name="doors">
+              <option>Межкомнатные двери</option>
+              <option>Входную дверь</option>
+              <option>Несколько проёмов</option>
+              <option>Пока не знаю, нужна консультация</option>
+            </select>
+          </div>
+
+          <p class="form-agree">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
+          <button type="submit" class="btn btn--primary">Записаться на замер</button>
+          <div class="form-success" id="form-success" role="status"></div>
+        </form>
+
+      </div>
+    </section>
+
+    <!-- =====================================================
+         ВОПРОСЫ И ОТВЕТЫ (раскрывающиеся блоки <details>)
+         ===================================================== -->
+    <section class="faq">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-head__title">Частые вопросы</h2>
+        </div>
+
+        <div class="faq__list">
+          <details class="faq__item">
+            <summary>Замер правда бесплатный?</summary>
+            <p>Да, выезд и замер бесплатны для заказчиков в черте города. Покупать у нас при этом не обязательно.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Сколько длится замер?</summary>
+            <p>В среднем 20–40 минут в зависимости от количества проёмов и сложности объекта.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Нужно ли присутствовать при замере?</summary>
+            <p>Желательно: так мастер сразу учтёт ваши пожелания по открыванию, цвету и фурнитуре.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Можно ли заказать замер для уже купленной двери?</summary>
+            <p>Конечно. Мастер проверит, подходит ли дверь к проёму, и подскажет, нужны ли доборы или подгонка.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =====================================================
+       ПОДВАЛ
+       ===================================================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© 2026 DoorHouse. Все права защищены.</span>
+      <span>Двери · Ручки · Фурнитура</span>
+    </div>
+  </footer>
+
+  <!-- =====================================================
+       СКРИПТ: мобильное меню и отправка формы (демо)
+       ===================================================== -->
+  <script>
+    // --- Мобильное меню ---
+    const burger = document.getElementById('burger');
+    const nav = document.getElementById('nav');
+    burger.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('is-open');
+      burger.classList.toggle('is-open', isOpen);
+      burger.setAttribute('aria-expanded', isOpen);
+    });
+
+    // --- Форма записи: дата не раньше сегодняшней ---
+    const form = document.getElementById('measure-form');
+    const success = document.getElementById('form-success');
+    form.date.min = new Date().toISOString().split('T')[0];
+
+    // --- Простая проверка и сообщение (данные пока никуда не отправляются) ---
+    // Для реальной отправки подключите бэкенд или сервис форм (fetch / action).
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = form.name.value.trim();
+      const phone = form.phone.value.replace(/\D/g, '');
+
+      if (!name || phone.length < 9) {
+        success.textContent = 'Пожалуйста, укажите имя и корректный номер телефона.';
+      } else {
+        success.textContent = 'Спасибо! Заявка на замер принята, мы скоро свяжемся с вами.';
+        form.reset();
+      }
+      success.classList.add('is-visible');
+    });
+  </script>
+</body>
+</html>

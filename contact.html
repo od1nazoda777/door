@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакты — DoorHouse</title>
+  <meta name="description" content="Контакты магазина дверей DoorHouse: адрес, телефон, режим работы, форма обратной связи и заказ замера.">
+
+  <!-- Шрифты -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Общие стили сайта (файл должен лежать рядом с этим HTML) -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- =====================================================
+       ШАПКА САЙТА (такая же, как на главной)
+       ===================================================== -->
+  <header class="header">
+    <div class="container header__inner">
+
+      <a href="index.html" class="logo" aria-label="DoorHouse — на главную">
+        <span class="logo__icon"></span>
+        <span class="logo__text">Door<span>House</span></span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Главное меню">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="catalog.html">Каталог</a></li>
+          <li><a class="nav__link" href="about.html">О нас</a></li>
+          <li><a class="nav__link" href="measure.html">Услуги замера</a></li>
+          <!-- Текущая страница -->
+          <li><a class="nav__link is-current" href="contacts.html" aria-current="page">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <a href="#callback" class="btn btn--primary btn--sm header__cta">Заказать звонок</a>
+
+      <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- =====================================================
+         ЗАГОЛОВОК СТРАНИЦЫ
+         ===================================================== -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="breadcrumbs">
+          <a href="index.html">Главная</a><span>/</span>Контакты
+        </div>
+        <h1 class="page-hero__title">Свяжитесь с нами</h1>
+        <p class="page-hero__text">
+          Поможем подобрать дверь, рассчитаем стоимость и запишем на бесплатный замер.
+        </p>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         КОНТАКТЫ: ИНФОРМАЦИЯ + ФОРМА
+         ===================================================== -->
+    <section class="contacts">
+      <div class="container contacts__grid">
+
+        <!-- Левая колонка: данные магазина (заменить на реальные) -->
+        <div class="contact-list">
+
+          <div class="contact-card">
+            <div class="contact-card__icon" aria-hidden="true">☎</div>
+            <div>
+              <div class="contact-card__title">Телефон</div>
+              <div class="contact-card__value"><a href="tel:+992000000000">+992 00 000 00 00</a></div>
+              <div class="contact-card__note">Звонок бесплатный</div>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-card__icon" aria-hidden="true">⌂</div>
+            <div>
+              <div class="contact-card__title">Адрес магазина</div>
+              <div class="contact-card__value">г. Худжанд, ул. Примерная, 1</div>
+              <div class="contact-card__note">Шоу-рум с образцами дверей и фурнитуры</div>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-card__icon" aria-hidden="true">◷</div>
+            <div>
+              <div class="contact-card__title">Режим работы</div>
+              <div class="contact-card__value">Пн–Сб: 9:00 – 19:00</div>
+              <div class="contact-card__note">Воскресенье — выходной</div>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-card__icon" aria-hidden="true">✉</div>
+            <div>
+              <div class="contact-card__title">Эл. почта и мессенджеры</div>
+              <div class="contact-card__value"><a href="mailto:info@doorhouse.example">info@doorhouse.example</a></div>
+              <div class="socials">
+                <a href="#" rel="noopener">Telegram</a>
+                <a href="#" rel="noopener">WhatsApp</a>
+                <a href="#" rel="noopener">Instagram</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Правая колонка: форма обратной связи -->
+        <form class="contact-form" id="callback" novalidate>
+          <h2 class="contact-form__title">Заказать звонок</h2>
+          <p class="contact-form__text">Оставьте номер — мы перезвоним в течение 15 минут в рабочее время.</p>
+
+          <div class="form-group">
+            <label for="name">Ваше имя</label>
+            <input class="form-control" type="text" id="name" name="name" placeholder="Например, Али" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Телефон</label>
+            <input class="form-control" type="tel" id="phone" name="phone" placeholder="+992 __ ___ __ __" required>
+          </div>
+
+          <div class="form-group">
+            <label for="topic">Что вас интересует?</label>
+            <select class="form-control" id="topic" name="topic">
+              <option>Межкомнатные двери</option>
+              <option>Входные двери</option>
+              <option>Дверные ручки</option>
+              <option>Замки и петли</option>
+              <option>Бесплатный замер</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Комментарий (необязательно)</label>
+            <textarea class="form-control" id="message" name="message" placeholder="Размеры проёма, пожелания по цвету и стилю…"></textarea>
+          </div>
+
+          <p class="form-agree">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
+          <button type="submit" class="btn btn--primary">Отправить заявку</button>
+          <div class="form-success" id="form-success" role="status">Спасибо! Заявка принята, мы скоро свяжемся с вами.</div>
+        </form>
+
+      </div>
+    </section>
+
+    <!-- =====================================================
+         КАРТА
+         Чтобы подключить реальную карту, вставьте внутрь .map-box
+         <iframe src="ССЫЛКА_НА_КАРТУ" loading="lazy"></iframe>
+         и удалите текстовую заглушку.
+         ===================================================== -->
+    <section class="map-section">
+      <div class="container">
+        <div class="map-box">
+          <div>
+            <div class="map-box__pin" aria-hidden="true">⌖</div>
+            Здесь будет карта с расположением магазина
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =====================================================
+       ПОДВАЛ
+       ===================================================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© 2026 DoorHouse. Все права защищены.</span>
+      <span>Двери · Ручки · Фурнитура</span>
+    </div>
+  </footer>
+
+  <!-- =====================================================
+       СКРИПТ: мобильное меню и отправка формы (демо)
+       ===================================================== -->
+  <script>
+    // --- Мобильное меню ---
+    const burger = document.getElementById('burger');
+    const nav = document.getElementById('nav');
+    burger.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('is-open');
+      burger.classList.toggle('is-open', isOpen);
+      burger.setAttribute('aria-expanded', isOpen);
+    });
+
+    // --- Форма: простая проверка и сообщение об успехе ---
+    // ВНИМАНИЕ: данные пока никуда не отправляются.
+    // Для реальной отправки подключите бэкенд или сервис форм (fetch / action).
+    const form = document.getElementById('callback');
+    const success = document.getElementById('form-success');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = form.name.value.trim();
+      const phone = form.phone.value.replace(/\D/g, '');
+
+      if (!name || phone.length < 9) {
+        success.textContent = 'Пожалуйста, укажите имя и корректный номер телефона.';
+        success.classList.add('is-visible');
+        return;
+      }
+      success.textContent = 'Спасибо! Заявка принята, мы скоро свяжемся с вами.';
+      success.classList.add('is-visible');
+      form.reset();
+    });
+  </script>
+</body>
+</html>

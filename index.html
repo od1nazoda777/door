@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DoorHouse — двери, ручки и фурнитура</title>
+  <meta name="description" content="Каталог межкомнатных и входных дверей, дверных ручек, замков и петель. Бесплатный замер и установка.">
+
+  <!-- Шрифты: Playfair Display (заголовки) + Inter (текст) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+  <!-- =====================================================
+       ШАПКА САЙТА
+       ===================================================== -->
+  <header class="header">
+    <div class="container header__inner">
+
+      <!-- Логотип -->
+      <a href="#" class="logo" aria-label="DoorHouse — на главную">
+        <span class="logo__icon"></span>
+        <span class="logo__text">Door<span>House</span></span>
+      </a>
+
+      <!-- Главное меню -->
+      <nav class="nav" id="nav" aria-label="Главное меню">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="./catalog.html">Каталог</a></li>
+          <li><a class="nav__link" href="./about.html">О нас</a></li>
+          <li><a class="nav__link" href="./measure.html">Услуги замера</a></li>
+          <li><a class="nav__link" href="./contact.html">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <!-- Кнопка заказа звонка -->
+      <a href="contacts.html" class="btn btn--primary btn--sm header__cta">Заказать звонок</a>
+
+      <!-- Бургер для мобильных устройств -->
+      <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- =====================================================
+         ГЛАВНЫЙ ЭКРАН (HERO)
+         ===================================================== -->
+    <section class="hero" id="home">
+      <div class="container hero__inner">
+
+        <!-- Текстовая часть -->
+        <div class="hero__content">
+          <span class="hero__tag">Двери · Ручки · Фурнитура</span>
+          <h1 class="hero__title">Двери, которые создают <em>характер</em> вашего дома</h1>
+          <p class="hero__subtitle">
+            Межкомнатные и входные двери, дверные ручки, замки и петли от проверенных
+            производителей. Бесплатный замер и профессиональная установка.
+          </p>
+
+          <div class="hero__actions">
+            <a href="catalog.html" class="btn btn--primary">Перейти в каталог</a>
+            <a href="measure.html" class="btn btn--outline">Заказать замер</a>
+          </div>
+
+          <!-- Цифры (заменить на реальные) -->
+          <div class="hero__stats">
+            <div class="stat">
+              <div class="stat__num">500+</div>
+              <div class="stat__label">моделей в каталоге</div>
+            </div>
+            <div class="stat">
+              <div class="stat__num">10 лет</div>
+              <div class="stat__label">на рынке</div>
+            </div>
+            <div class="stat">
+              <div class="stat__num">5 лет</div>
+              <div class="stat__label">гарантия</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Блок под фото интерьера с дверью.
+             Пока здесь CSS-макет двери — замените на реальное фото. -->
+        <div class="hero__visual" role="img" aria-label="Интерьер с межкомнатной дверью">
+          <div class="door-mock">
+            <span class="door-mock__handle"></span>
+          </div>
+          <div class="hero__badge">Коллекция «Classic Oak» — новинка сезона</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================================
+         КАТАЛОГ: ФИЛЬТРЫ КАТЕГОРИЙ
+         ===================================================== -->
+    <section class="catalog" id="catalog">
+      <div class="container">
+
+        <div class="section-head">
+          <h2 class="section-head__title">Каталог товаров</h2>
+          <p class="section-head__text">Выберите категорию, чтобы быстро найти нужную дверь или фурнитуру.</p>
+        </div>
+
+        <!-- Кнопки-фильтры (data-filter — значение для будущей фильтрации карточек) -->
+        <div class="filters" id="filters" role="tablist" aria-label="Категории товаров">
+          <button class="filter-btn is-active" data-filter="all" role="tab" aria-selected="true">Все товары</button>
+          <button class="filter-btn" data-filter="interior" role="tab" aria-selected="false">Межкомнатные двери</button>
+          <button class="filter-btn" data-filter="entrance" role="tab" aria-selected="false">Входные двери</button>
+          <button class="filter-btn" data-filter="handles"  role="tab" aria-selected="false">Дверные ручки</button>
+          <button class="filter-btn" data-filter="locks"    role="tab" aria-selected="false">Замки и петли</button>
+        </div>
+
+        <!-- Каталог теперь на отдельной странице -->
+        <div style="text-align:center;">
+          <a href="catalog.html" class="btn btn--primary">Открыть весь каталог</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =====================================================
+       СКРИПТ: мобильное меню и переключение фильтров
+       ===================================================== -->
+  <script>
+    // --- Мобильное меню ---
+    const burger = document.getElementById('burger');
+    const nav = document.getElementById('nav');
+
+    burger.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('is-open');
+      burger.classList.toggle('is-open', isOpen);
+      burger.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Закрываем меню после клика по пункту
+    nav.querySelectorAll('a').forEach(link =>
+      link.addEventListener('click', () => {
+        nav.classList.remove('is-open');
+        burger.classList.remove('is-open');
+        burger.setAttribute('aria-expanded', 'false');
+      })
+    );
+
+    // --- Фильтры категорий: открываем каталог с выбранной категорией ---
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        window.location.href = 'catalog.html?cat=' + btn.dataset.filter;
+      });
+    });
+  </script>
+</body>
+</html>

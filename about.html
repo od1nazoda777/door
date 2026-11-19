@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>О нас — DoorHouse</title>
+  <meta name="description" content="DoorHouse — магазин межкомнатных и входных дверей, дверных ручек и фурнитуры. Наша история, ценности и подход к работе.">
+
+  <!-- Шрифты -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Общие стили сайта (файл должен лежать рядом с этим HTML) -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- =====================================================
+       ШАПКА САЙТА (такая же, как на других страницах)
+       ===================================================== -->
+  <header class="header">
+    <div class="container header__inner">
+
+      <a href="index.html" class="logo" aria-label="DoorHouse — на главную">
+        <span class="logo__icon"></span>
+        <span class="logo__text">Door<span>House</span></span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Главное меню">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="catalog.html">Каталог</a></li>
+          <!-- Текущая страница -->
+          <li><a class="nav__link is-current" href="about.html" aria-current="page">О нас</a></li>
+          <li><a class="nav__link" href="measure.html">Услуги замера</a></li>
+          <li><a class="nav__link" href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <a href="contacts.html#callback" class="btn btn--primary btn--sm header__cta">Заказать звонок</a>
+
+      <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- =====================================================
+         ЗАГОЛОВОК СТРАНИЦЫ
+         ===================================================== -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="breadcrumbs">
+          <a href="index.html">Главная</a><span>/</span>О нас
+        </div>
+        <h1 class="page-hero__title">О компании DoorHouse</h1>
+        <p class="page-hero__text">
+          Мы помогаем сделать дом уютнее: подбираем двери и фурнитуру, которые служат годами и радуют глаз.
+        </p>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         О КОМПАНИИ: ТЕКСТ + БЛОК ПОД ФОТО
+         (все тексты — примеры, заменить на реальные)
+         ===================================================== -->
+    <section class="about">
+      <div class="container about__grid">
+
+        <div>
+          <span class="about__tag">Наша история</span>
+          <h2 class="about__title">Двери — это первое, что встречает гостей, и последнее, что вы закрываете за собой</h2>
+          <p class="about__text">
+            DoorHouse начинался с небольшого шоу-рума и желания предложить покупателям качественные двери
+            без переплат. Сегодня в нашем каталоге межкомнатные и входные двери, дверные ручки, замки и петли
+            от проверенных производителей.
+          </p>
+          <p class="about__text">
+            Мы работаем напрямую с фабриками, поэтому уверены в качестве и можем предложить честные цены.
+            Консультируем, выезжаем на замер и помогаем с установкой, чтобы вам не пришлось ни о чём беспокоиться.
+          </p>
+          <a href="catalog.html" class="btn btn--primary" style="margin-top: 12px;">Смотреть каталог</a>
+        </div>
+
+        <!-- Блок под фото магазина или шоу-рума -->
+        <div class="about__photo" role="img" aria-label="Шоу-рум DoorHouse">
+          <div class="about__photo-badge">Наш шоу-рум: более 100 образцов</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================================
+         ЦИФРЫ КОМПАНИИ
+         ===================================================== -->
+    <section class="about-stats">
+      <div class="container about-stats__grid">
+        <div class="stat">
+          <div class="stat__num">10 лет</div>
+          <div class="stat__label">на рынке</div>
+        </div>
+        <div class="stat">
+          <div class="stat__num">500+</div>
+          <div class="stat__label">моделей в каталоге</div>
+        </div>
+        <div class="stat">
+          <div class="stat__num">3000+</div>
+          <div class="stat__label">довольных клиентов</div>
+        </div>
+        <div class="stat">
+          <div class="stat__num">5 лет</div>
+          <div class="stat__label">гарантия на двери</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         ЦЕННОСТИ
+         ===================================================== -->
+    <section class="values">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-head__title">Почему выбирают нас</h2>
+          <p class="section-head__text">Три принципа, на которых строится наша работа.</p>
+        </div>
+
+        <div class="values__grid">
+          <div class="value-card">
+            <h3 class="value-card__title">Качество</h3>
+            <p class="value-card__text">Отбираем производителей и проверяем каждую партию, чтобы дверь и фурнитура служили долго.</p>
+          </div>
+          <div class="value-card">
+            <h3 class="value-card__title">Честные цены</h3>
+            <p class="value-card__text">Работаем напрямую с фабриками, без лишних наценок. Стоимость фиксируем в смете заранее.</p>
+          </div>
+          <div class="value-card">
+            <h3 class="value-card__title">Сервис под ключ</h3>
+            <p class="value-card__text">Замер, подбор, доставка и установка. Вам достаточно выбрать, остальное сделаем мы.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         ИСТОРИЯ (ТАЙМЛАЙН) — годы и события заменить на реальные
+         ===================================================== -->
+    <section class="timeline-section">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-head__title">Путь компании</h2>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline__item">
+            <div class="timeline__year">2016</div>
+            <div class="timeline__title">Открытие первого шоу-рума</div>
+            <p class="timeline__text">Начали с нескольких десятков моделей межкомнатных дверей.</p>
+          </div>
+          <div class="timeline__item">
+            <div class="timeline__year">2019</div>
+            <div class="timeline__title">Расширение ассортимента</div>
+            <p class="timeline__text">Добавили входные двери, дверные ручки, замки и петли.</p>
+          </div>
+          <div class="timeline__item">
+            <div class="timeline__year">2022</div>
+            <div class="timeline__title">Запуск службы замера и установки</div>
+            <p class="timeline__text">Собрали команду мастеров и начали работать «под ключ».</p>
+          </div>
+          <div class="timeline__item">
+            <div class="timeline__year">2026</div>
+            <div class="timeline__title">Новый онлайн-каталог</div>
+            <p class="timeline__text">Запустили сайт, чтобы выбирать двери было удобно из дома.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         ПРИЗЫВ К ДЕЙСТВИЮ
+         ===================================================== -->
+    <section class="cta">
+      <div class="container">
+        <div class="cta__box">
+          <h2 class="cta__title">Подберём дверь под ваш интерьер</h2>
+          <p class="cta__text">Запишитесь на бесплатный замер или задайте вопрос — мы всегда на связи.</p>
+          <div class="cta__actions">
+            <a href="measure.html" class="btn btn--primary">Заказать замер</a>
+            <a href="contacts.html" class="btn btn--outline">Связаться с нами</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =====================================================
+       ПОДВАЛ
+       ===================================================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© 2026 DoorHouse. Все права защищены.</span>
+      <span>Двери · Ручки · Фурнитура</span>
+    </div>
+  </footer>
+
+  <!-- =====================================================
+       СКРИПТ: мобильное меню
+       ===================================================== -->
+  <script>
+    const burger = document.getElementById('burger');
+    const nav = document.getElementById('nav');
+    burger.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('is-open');
+      burger.classList.toggle('is-open', isOpen);
+      burger.setAttribute('aria-expanded', isOpen);
+    });
+  </script>
+</body>
+</html>
